@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Visualizer from './components/visualizer'
 import './App.css'
 
-function App() {
+const App = () => {
+
   return (
     <div>
     <Visualizer />
