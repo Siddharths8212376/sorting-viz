@@ -2,7 +2,7 @@ import React from 'react'
 import selectionSortAnimations from '../animations/selectionSortAnimations'
 
 const SelectionSort = (arr) => {
-    const animation_speed = 100
+    const animation_speed = 5
     const animations = selectionSortAnimations(arr)
     for (let i = 0; i < animations.length; i++) {
         const arrayBars = document.getElementsByClassName('array-bar')

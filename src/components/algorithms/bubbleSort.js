@@ -2,7 +2,7 @@ import React from 'react'
 import bubbleSortAnimations from '../animations/bubbleSortAnimations'
 
 const BubbleSort = (arr) => {
-    const animation_speed = 10
+    const animation_speed = 5
     const animations = bubbleSortAnimations(arr)
     for (let i = 0; i < animations.length; i++) {
         const arrayBars = document.getElementsByClassName('array-bar')
