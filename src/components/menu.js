@@ -19,12 +19,23 @@ const randRange = (min, max) => {
 const Menu = ({arr, setArr}) => {
 
     const array = generateArray()
+    const buttonStyle = {
+        marginLeft:"10px", marginRight:"10px"
+    }
     return (
-        <nav className="navbar navbar-light" style={{backgroundColor:"#e3f2fd"}}>
-            <button type="button" className="btn btn-primary" onClick={() => {setArr(generateArray); console.log(arr)}}>Generate Random Array</button>
-            <button type="button" className="btn btn-primary" onClick={() => {SelectionSort(arr); console.log(arr)}}>Selection Sort</button>
-            <Button text={"Bubble Sort"}/>
-            <Button text={"Merge Sort"}/>
+        <nav className="navbar navbar-light" style={{
+            backgroundColor:"#e3f2fd",
+            display:"inline-block",
+            textAlign:"center",
+            left:"50%",
+            transform:"translatex(-50%)",
+            width:"100%",
+            }
+            }>
+            <button type="button" className="btn btn-primary" onClick={() => {setArr(generateArray); console.log(arr)}} style={buttonStyle}>Generate Random Array</button>
+            <button type="button" className="btn btn-primary" onClick={() => {SelectionSort(arr); console.log(arr)}} style={buttonStyle}>Selection Sort</button>
+            <Button text={"Bubble Sort"} style={buttonStyle}/>
+            <Button text={"Merge Sort"} style={buttonStyle}/>
         </nav>
     )
 }
