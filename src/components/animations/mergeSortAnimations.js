@@ -9,7 +9,7 @@ const mergeSortAnimations = (array) => {
     const startIndex = 0
     const endIndex = array.length - 1
     divide(array, startIndex, endIndex, aux, animations)
-    console.log('now', array)
+    // console.log('now', array)
     return animations
 }
 
@@ -43,7 +43,7 @@ const mergeNConquer = (mainArr, startIndex, midIndex, endIndex, auxArr, animatio
 
     }
 
-    while (i < midIndex) {
+    while (i <= midIndex) {
         // compare with same value
         animations.push([i, i, 'comp'])
         // revert
@@ -53,7 +53,7 @@ const mergeNConquer = (mainArr, startIndex, midIndex, endIndex, auxArr, animatio
         mainArr[k++] = auxArr[i++]
     }
 
-    while (j < endIndex) {
+    while (j <= endIndex) {
         // compare with same value
         animations.push([j, j, 'comp'])
         // revert
