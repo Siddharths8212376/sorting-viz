@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Button from './button'
 
 import SelectionSort from './algorithms/selectionSort'
+import BubbleSort from './algorithms/bubbleSort'
+
 function generateArray() {
     const ar = []
 
@@ -34,7 +36,7 @@ const Menu = ({arr, setArr}) => {
             }>
             <button type="button" className="btn btn-primary" onClick={() => {setArr(generateArray); console.log(arr)}} style={buttonStyle}>Generate Random Array</button>
             <button type="button" className="btn btn-primary" onClick={() => {SelectionSort(arr); console.log(arr)}} style={buttonStyle}>Selection Sort</button>
-            <Button text={"Bubble Sort"} style={buttonStyle}/>
+            <button type="button" className="btn btn-primary" onClick={() => {BubbleSort(arr); console.log(arr)}} style={buttonStyle}>Bubble Sort</button>
             <Button text={"Merge Sort"} style={buttonStyle}/>
         </nav>
     )
