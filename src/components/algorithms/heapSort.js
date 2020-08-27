@@ -1,9 +1,9 @@
 import React from 'react'
-import quickSortAnimations from '../animations/quickSortAnimations'
+import heapSortAnimations from '../animations/heapSortAnimations'
 
-const QuickSort = (arr) => {
-    const animation_speed = 30
-    const animations = quickSortAnimations(arr)
+const HeapSort = (arr) => {
+    const animation_speed = 5
+    const animations = heapSortAnimations(arr)
     // after sort
     for (let i = 0; i < animations.length; i++) {
         const arrayBars = document.getElementsByClassName('array-bar')
@@ -40,8 +40,6 @@ const QuickSort = (arr) => {
         }
 
     }
-    
-
 }
 
-export default QuickSort
+export default HeapSort
