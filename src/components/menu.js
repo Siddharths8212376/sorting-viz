@@ -5,6 +5,7 @@ import SelectionSort from './algorithms/selectionSort'
 import BubbleSort from './algorithms/bubbleSort'
 import MergeSort from './algorithms/mergeSort'
 import InsertionSort from './algorithms/insertionSort'
+import QuickSort from './algorithms/quickSort'
 
 function generateArray() {
     const ar = []
@@ -36,11 +37,12 @@ const Menu = ({arr, setArr}) => {
             width:"100%",
             }
             }>
-            <button type="button" className="btn btn-primary" onClick={() => {setArr(generateArray); console.log(arr)}} style={buttonStyle}>Generate Random Array</button>
+            <button type="button" className="btn btn-success" onClick={() => {setArr(generateArray); console.log(arr)}} style={buttonStyle}>Generate Random Array</button>
             <button type="button" className="btn btn-primary" onClick={() => {SelectionSort(arr); console.log(arr)}} style={buttonStyle}>Selection Sort</button>
             <button type="button" className="btn btn-primary" onClick={() => {BubbleSort(arr); console.log(arr)}} style={buttonStyle}>Bubble Sort</button>
             <button type="button" className="btn btn-primary" onClick={() => {MergeSort(arr); console.log(arr)}} style={buttonStyle}>Merge Sort</button>
             <button type="button" className="btn btn-primary" onClick={() => {InsertionSort(arr); console.log(arr)}} style={buttonStyle}>Insertion Sort</button>
+            <button type="button" className="btn btn-primary" onClick={() => {QuickSort(arr); console.log(arr)}} style={buttonStyle}>Quick Sort</button>
         </nav>
     )
 }
