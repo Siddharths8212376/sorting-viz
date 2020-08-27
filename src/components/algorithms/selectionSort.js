@@ -1,37 +1,51 @@
 import React from 'react'
+import selectionSortAnimations from '../animations/selectionSortAnimations'
 
-const selectionSortAnimations = (array) => {
-    const animations = []
-    if (array.length <= 1) return array
-    let minIndex = 0
-    for (let i = 0; i < array.length - 1; i++) {
-        minIndex = i
-        for (let j = i + 1; j < array.length; j++) {
-            // comparing indices j and minIndex
+const SelectionSort = (arr) => {
+    const animations = selectionSortAnimations(arr)
+    for (let i = 0; i < animations.length; i++) {
+        const arrayBars = document.getElementsByClassName('array-bar')
+        const [barOneIndex, barTwoIndex, func] = animations[i]
+        const barOneStyle = arrayBars[barOneIndex].style
+        const barTwoStyle = arrayBars[barTwoIndex].style
+        if (func === 'comp') {
+            let color = 'red'
+            setTimeout(() => {
+                barOneStyle.backgroundColor = color;
+                barTwoStyle.backgroundColor = color;
+              }, i * 5);
+        } else if (func === 'rev'){ 
+            let color = 'blue'
+            setTimeout(() => {
+                barOneStyle.backgroundColor = color;
+                barTwoStyle.backgroundColor = color;
+              }, i * 5);
 
-            animations.push([j, minIndex, 'comp'])
-            // for reverting the colors
-            animations.push([j, minIndex, 'rev'])
-            if (array[j] < array[minIndex]) {
-                minIndex = j
-                animations.push([minIndex, minIndex,'set'])
-            }
-            // for reverting the colors
-            // animations.push([j, minIndex])
+        } else if (func === 'set') {
+            let color = 'green'
+            setTimeout(() => {
+                barOneStyle.backgroundColor = color;
+                barTwoStyle.backgroundColor = color;
+              }, i * 5);
+
+        } else if (func === 'swap') {
+            // change bar heights here
+
+            let color = 'turquoise'
+            setTimeout(() => {
+                let firstHeight = arrayBars[barOneIndex].style.height
+                let secondHeight = arrayBars[barTwoIndex].style.height
+    
+                arrayBars[barOneIndex].style.height = secondHeight
+                arrayBars[barTwoIndex].style.height = firstHeight
+
+                barOneStyle.backgroundColor = color;
+                barTwoStyle.backgroundColor = color;
+
+              }, i * 5);
         }
-        if (minIndex != i) {
-            // swap
-            // animations.push([minIndex, i])
-            // revert the colors
-            animations.push([minIndex, i, 'swap'])
-            let t = array[minIndex]
-            array[minIndex] = array[i]
-            array[i] = t
-        }
-        // to show the minIndex
-        // animations.push([minIndex, minIndex])
+
     }
-    return animations
 }
 
-export default selectionSortAnimations;
+export default SelectionSort
