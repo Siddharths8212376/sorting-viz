@@ -2,6 +2,7 @@ import React from 'react'
 import bubbleSortAnimations from '../animations/bubbleSortAnimations'
 
 const BubbleSort = (arr) => {
+    const animation_speed = 100
     const animations = bubbleSortAnimations(arr)
     for (let i = 0; i < animations.length; i++) {
         const arrayBars = document.getElementsByClassName('array-bar')
@@ -13,13 +14,13 @@ const BubbleSort = (arr) => {
             setTimeout(() => {
                 barOneStyle.backgroundColor = color;
                 barTwoStyle.backgroundColor = color;
-              }, i * 5);
+              }, i * animation_speed);
         } else if (func === 'rev'){ 
             let color = 'blue'
             setTimeout(() => {
                 barOneStyle.backgroundColor = color;
                 barTwoStyle.backgroundColor = color;
-              }, i * 5);
+              }, i * animation_speed);
 
         } else if (func === 'swap') {
             // change bar heights here
@@ -35,7 +36,7 @@ const BubbleSort = (arr) => {
                 barOneStyle.backgroundColor = color;
                 barTwoStyle.backgroundColor = color;
 
-              }, i * 5);
+              }, i * animation_speed);
         }
 
     }

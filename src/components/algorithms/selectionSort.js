@@ -2,6 +2,7 @@ import React from 'react'
 import selectionSortAnimations from '../animations/selectionSortAnimations'
 
 const SelectionSort = (arr) => {
+    const animation_speed = 100
     const animations = selectionSortAnimations(arr)
     for (let i = 0; i < animations.length; i++) {
         const arrayBars = document.getElementsByClassName('array-bar')
@@ -13,20 +14,20 @@ const SelectionSort = (arr) => {
             setTimeout(() => {
                 barOneStyle.backgroundColor = color;
                 barTwoStyle.backgroundColor = color;
-              }, i * 5);
+              }, i * animation_speed);
         } else if (func === 'rev'){ 
             let color = 'blue'
             setTimeout(() => {
                 barOneStyle.backgroundColor = color;
                 barTwoStyle.backgroundColor = color;
-              }, i * 5);
+              }, i * animation_speed);
 
         } else if (func === 'set') {
             let color = 'green'
             setTimeout(() => {
                 barOneStyle.backgroundColor = color;
                 barTwoStyle.backgroundColor = color;
-              }, i * 5);
+              }, i * animation_speed);
 
         } else if (func === 'swap') {
             // change bar heights here
@@ -42,7 +43,7 @@ const SelectionSort = (arr) => {
                 barOneStyle.backgroundColor = color;
                 barTwoStyle.backgroundColor = color;
 
-              }, i * 5);
+              }, i * animation_speed);
         }
 
     }

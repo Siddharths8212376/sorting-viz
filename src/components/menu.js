@@ -3,6 +3,7 @@ import Button from './button'
 
 import SelectionSort from './algorithms/selectionSort'
 import BubbleSort from './algorithms/bubbleSort'
+import MergeSort from './algorithms/mergeSort'
 
 function generateArray() {
     const ar = []
@@ -37,7 +38,7 @@ const Menu = ({arr, setArr}) => {
             <button type="button" className="btn btn-primary" onClick={() => {setArr(generateArray); console.log(arr)}} style={buttonStyle}>Generate Random Array</button>
             <button type="button" className="btn btn-primary" onClick={() => {SelectionSort(arr); console.log(arr)}} style={buttonStyle}>Selection Sort</button>
             <button type="button" className="btn btn-primary" onClick={() => {BubbleSort(arr); console.log(arr)}} style={buttonStyle}>Bubble Sort</button>
-            <Button text={"Merge Sort"} style={buttonStyle}/>
+            <button type="button" className="btn btn-primary" onClick={() => {MergeSort(arr); console.log(arr)}} style={buttonStyle}>Merge Sort</button>
         </nav>
     )
 }
