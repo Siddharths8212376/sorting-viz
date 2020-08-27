@@ -24,7 +24,6 @@ const BubbleSort = (arr) => {
 
         } else if (func === 'swap') {
             // change bar heights here
-
             let color = 'turquoise'
             setTimeout(() => {
                 let firstHeight = arrayBars[barOneIndex].style.height
