@@ -6,6 +6,7 @@ import BubbleSort from './algorithms/bubbleSort'
 import MergeSort from './algorithms/mergeSort'
 import InsertionSort from './algorithms/insertionSort'
 import QuickSort from './algorithms/quickSort'
+import HeapSort from './algorithms/heapSort'
 
 function generateArray() {
     const ar = []
@@ -43,6 +44,7 @@ const Menu = ({arr, setArr}) => {
             <button type="button" className="btn btn-primary" onClick={() => {MergeSort(arr); console.log(arr)}} style={buttonStyle}>Merge Sort</button>
             <button type="button" className="btn btn-primary" onClick={() => {InsertionSort(arr); console.log(arr)}} style={buttonStyle}>Insertion Sort</button>
             <button type="button" className="btn btn-primary" onClick={() => {QuickSort(arr); console.log(arr)}} style={buttonStyle}>Quick Sort</button>
+            <button type="button" className="btn btn-primary" onClick={() => {HeapSort(arr); console.log(arr)}} style={buttonStyle}>Heap Sort</button>
         </nav>
     )
 }
