@@ -18,6 +18,17 @@ function generateArray() {
     return ar
 }
 
+const disableButtons = () => {
+    document.querySelectorAll('button').forEach(elem => {
+        elem.disabled = true
+    })
+}
+
+const enableButtons = () => {
+    document.querySelectorAll('button').forEach(elem => {
+        elem.disabled = false
+    })
+}
 
 const randRange = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -39,30 +50,14 @@ const Menu = ({arr, setArr}) => {
             width:"100%",
             }
             }>
-                <Option text={'Enable Options'} onClick={() => {
-                                    document.querySelectorAll('button').forEach(elem => {
-                                        elem.disabled = false
-                                    })
-                }} style={buttonStyle}/>
+            <Option text={'Enable Options'} onClick={() => {enableButtons()}} style={buttonStyle}/>
             <button type="button" className="btn btn-success" onClick={() => {setArr(generateArray); console.log(arr)}} style={buttonStyle}>Generate Random Array</button>
-            <button type="button" className="btn btn-primary" onClick={() => {
-                SelectionSort(arr)
-                document.querySelectorAll('button').forEach(elem => {
-                    elem.disabled = true
-                })
-                console.log(arr)
-                }} style={buttonStyle}>Selection Sort</button>
-            <button type="button" className="btn btn-primary" onClick={() => {BubbleSort(arr); console.log(arr)}} style={buttonStyle}>Bubble Sort</button>
-            <button type="button" className="btn btn-primary" onClick={() => {MergeSort(arr); console.log(arr)}} style={buttonStyle}>Merge Sort</button>
-            <button type="button" className="btn btn-primary" onClick={() => {InsertionSort(arr); console.log(arr)}} style={buttonStyle}>Insertion Sort</button>
-            <button type="button" className="btn btn-primary" onClick={() => {QuickSort(arr); console.log(arr)}} style={buttonStyle}>Quick Sort</button>
-            <button type="button" className="btn btn-primary" onClick={() => {
-                HeapSort(arr)
-                document.querySelectorAll('button').forEach(elem => {
-                    elem.disabled = true
-                })
-                console.log(arr)
-                 }} style={buttonStyle}>Heap Sort</button>
+            <button type="button" className="btn btn-primary" onClick={() => {SelectionSort(arr); disableButtons();console.log(arr)}} style={buttonStyle}>Selection Sort</button>
+            <button type="button" className="btn btn-primary" onClick={() => {BubbleSort(arr); disableButtons(); console.log(arr)}} style={buttonStyle}>Bubble Sort</button>
+            <button type="button" className="btn btn-primary" onClick={() => {MergeSort(arr); disableButtons(); console.log(arr)}} style={buttonStyle}>Merge Sort</button>
+            <button type="button" className="btn btn-primary" onClick={() => {InsertionSort(arr); disableButtons(); console.log(arr)}} style={buttonStyle}>Insertion Sort</button>
+            <button type="button" className="btn btn-primary" onClick={() => {QuickSort(arr); disableButtons(); console.log(arr)}} style={buttonStyle}>Quick Sort</button>
+            <button type="button" className="btn btn-primary" onClick={() => {HeapSort(arr); disableButtons();console.log(arr)}} style={buttonStyle}>Heap Sort</button>
         </nav>
     )
 }
