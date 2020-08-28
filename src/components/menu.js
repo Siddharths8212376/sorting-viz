@@ -13,7 +13,7 @@ function generateArray(size) {
     const ar = []
 
     for (let i = 0; i < size; i++) 
-        ar.push(randRange(5, Math.max(size, 64)))
+        ar.push(randRange(5, Math.max(2*size, 64)))
 
     return ar
 }

@@ -6,6 +6,10 @@ const heapSortAnimations = (array) => {
     let size = array.length
     heapSort(array, size, animations)
     console.log('sorted')
+    for (let i = 0; i < array.length; i++) 
+        animations.push([i, i, 'over'])
+    for (let i = 0; i < array.length; i++)
+        animations.push([i, i, 'rev'])
     return animations
 }
 

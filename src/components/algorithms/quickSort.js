@@ -23,6 +23,16 @@ const QuickSort = ({ arr, speed }) => {
                 barTwoStyle.backgroundColor = color;
               }, i * animation_speed);
 
+        } else if (func === 'over'){ 
+            const [barOneIndex, barTwoIndex, fun] = animations[i]
+            const barOneStyle = arrayBars[barOneIndex].style
+            const barTwoStyle = arrayBars[barTwoIndex].style
+            let color = 'violet'
+            setTimeout(() => {
+                barOneStyle.backgroundColor = color;
+                barTwoStyle.backgroundColor = color;
+              }, i * animation_speed);
+
         } else if (func === 'swap') {
             // change bar heights here
             let color = '#0066ED'

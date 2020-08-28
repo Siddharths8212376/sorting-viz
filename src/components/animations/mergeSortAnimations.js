@@ -9,6 +9,10 @@ const mergeSortAnimations = (array) => {
     const startIndex = 0
     const endIndex = array.length - 1
     divide(array, startIndex, endIndex, aux, animations)
+    for (let i = 0; i < array.length; i++) 
+        animations.push([i, i, 'over'])
+    for (let i = 0; i < array.length; i++)
+        animations.push([i, i, 'rev'])
     return animations
 }
 

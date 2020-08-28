@@ -21,6 +21,10 @@ const insertionSortAnimations = (array) => {
         animations.push([j + 1, key, 'change'])
         array[j + 1] = key
     }
+    for (let i = 0; i < array.length; i++) 
+        animations.push([i, i, 'over'])
+    for (let i = 0; i < array.length; i++)
+        animations.push([i, i, 'rev'])
     return animations
 }
 

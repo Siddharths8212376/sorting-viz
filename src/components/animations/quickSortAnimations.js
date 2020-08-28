@@ -6,6 +6,10 @@ const quickSortAnimations = (array) => {
     const startIndex = 0
     const endIndex = array.length - 1
     quickSort(array, startIndex, endIndex, animations)
+    for (let i = 0; i < array.length; i++) 
+        animations.push([i, i, 'over'])
+    for (let i = 0; i < array.length; i++)
+        animations.push([i, i, 'rev'])
     return animations
 }
 
