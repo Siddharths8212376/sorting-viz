@@ -21,7 +21,7 @@ const InsertionSort = (arr) => {
             const [barOneIndex, barTwoIndex, func] = animations[i]
             const barOneStyle = arrayBars[barOneIndex].style
             const barTwoStyle = arrayBars[barTwoIndex].style
-            let color = 'blue'
+            let color = '#0066ED'
             setTimeout(() => {
                 barOneStyle.backgroundColor = color;
                 barTwoStyle.backgroundColor = color;
@@ -31,7 +31,7 @@ const InsertionSort = (arr) => {
             // change bar heights here
             const [barOneIndex, barTwoHeight, func] = animations[i]
             const barOneStyle = arrayBars[barOneIndex].style
-            let color = 'turquoise'
+            let color = '#0066ED'
             setTimeout(() => {
                 let secondHeight = barTwoHeight
                 arrayBars[barOneIndex].style.height = `${secondHeight}px`

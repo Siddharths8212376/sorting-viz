@@ -16,7 +16,7 @@ const SelectionSort = (arr) => {
                 barTwoStyle.backgroundColor = color;
               }, i * animation_speed);
         } else if (func === 'rev'){ 
-            let color = 'blue'
+            let color = '#0066ED'
             setTimeout(() => {
                 barOneStyle.backgroundColor = color;
                 barTwoStyle.backgroundColor = color;
@@ -32,7 +32,7 @@ const SelectionSort = (arr) => {
         } else if (func === 'swap') {
             // change bar heights here
 
-            let color = 'turquoise'
+            let color = '#0066ED'
             setTimeout(() => {
                 let firstHeight = arrayBars[barOneIndex].style.height
                 let secondHeight = arrayBars[barTwoIndex].style.height

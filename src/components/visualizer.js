@@ -1,22 +1,7 @@
 import React, { useState } from 'react'
 import Menu from './menu'
 import './visualizer.css'
-
-const Array = ({ arr }) => {
-    
-    return (
-        <div className="array-container">
-            {arr.map((value, idx) => (
-                <div className="array-bar" key={idx} 
-                style={{
-                    backgroundColor: "blue",
-                    height: `${value}px`,
-                }}> </div>
-            ))}
-        </div>
-    )
-}
-
+import Array from './array'
 
 const Visualizer = () => {
     const init_array = []

@@ -23,7 +23,7 @@ const MergeSort = (arr) => {
             const [barOneIndex, barTwoIndex, fun] = animations[i]
             const barOneStyle = arrayBars[barOneIndex].style
             const barTwoStyle = arrayBars[barTwoIndex].style
-            let color = 'blue'
+            let color = '#0066ED'
             setTimeout(() => {
                 barOneStyle.backgroundColor = color;
                 barTwoStyle.backgroundColor = color;
@@ -31,7 +31,7 @@ const MergeSort = (arr) => {
 
         } else if (func === 'change') {
 
-            let color = 'turquoise'
+            let color = '#0066ED'
             setTimeout(() => {
                 const [barOneIndex, barTwoIndex, barTwoHeight, fun] = animations[i]
                 const barOneStyle = arrayBars[barOneIndex].style
