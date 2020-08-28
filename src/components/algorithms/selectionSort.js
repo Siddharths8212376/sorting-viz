@@ -12,21 +12,21 @@ const SelectionSort = (arr) => {
         if (func === 'comp') {
             let color = 'red'
             setTimeout(() => {
-                barOneStyle.backgroundColor = color;
-                barTwoStyle.backgroundColor = color;
+                barOneStyle.backgroundColor = color
+                barTwoStyle.backgroundColor = color
               }, i * animation_speed);
         } else if (func === 'rev'){ 
             let color = '#0066ED'
             setTimeout(() => {
-                barOneStyle.backgroundColor = color;
-                barTwoStyle.backgroundColor = color;
+                barOneStyle.backgroundColor = color
+                barTwoStyle.backgroundColor = color
               }, i * animation_speed);
 
         } else if (func === 'set') {
             let color = 'green'
             setTimeout(() => {
-                barOneStyle.backgroundColor = color;
-                barTwoStyle.backgroundColor = color;
+                barOneStyle.backgroundColor = color
+                barTwoStyle.backgroundColor = color
               }, i * animation_speed);
 
         } else if (func === 'swap') {
@@ -40,8 +40,8 @@ const SelectionSort = (arr) => {
                 arrayBars[barOneIndex].style.height = secondHeight
                 arrayBars[barTwoIndex].style.height = firstHeight
 
-                barOneStyle.backgroundColor = color;
-                barTwoStyle.backgroundColor = color;
+                barOneStyle.backgroundColor = color
+                barTwoStyle.backgroundColor = color
 
               }, i * animation_speed);
         }

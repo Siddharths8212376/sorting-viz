@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Button from './button'
+import Option from './option'
 
 import SelectionSort from './algorithms/selectionSort'
 import BubbleSort from './algorithms/bubbleSort'
@@ -38,13 +39,30 @@ const Menu = ({arr, setArr}) => {
             width:"100%",
             }
             }>
+                <Option text={'Enable Options'} onClick={() => {
+                                    document.querySelectorAll('button').forEach(elem => {
+                                        elem.disabled = false
+                                    })
+                }} style={buttonStyle}/>
             <button type="button" className="btn btn-success" onClick={() => {setArr(generateArray); console.log(arr)}} style={buttonStyle}>Generate Random Array</button>
-            <button type="button" className="btn btn-primary" onClick={() => {SelectionSort(arr); console.log(arr)}} style={buttonStyle}>Selection Sort</button>
+            <button type="button" className="btn btn-primary" onClick={() => {
+                SelectionSort(arr)
+                document.querySelectorAll('button').forEach(elem => {
+                    elem.disabled = true
+                })
+                console.log(arr)
+                }} style={buttonStyle}>Selection Sort</button>
             <button type="button" className="btn btn-primary" onClick={() => {BubbleSort(arr); console.log(arr)}} style={buttonStyle}>Bubble Sort</button>
             <button type="button" className="btn btn-primary" onClick={() => {MergeSort(arr); console.log(arr)}} style={buttonStyle}>Merge Sort</button>
             <button type="button" className="btn btn-primary" onClick={() => {InsertionSort(arr); console.log(arr)}} style={buttonStyle}>Insertion Sort</button>
             <button type="button" className="btn btn-primary" onClick={() => {QuickSort(arr); console.log(arr)}} style={buttonStyle}>Quick Sort</button>
-            <button type="button" className="btn btn-primary" onClick={() => {HeapSort(arr); console.log(arr)}} style={buttonStyle}>Heap Sort</button>
+            <button type="button" className="btn btn-primary" onClick={() => {
+                HeapSort(arr)
+                document.querySelectorAll('button').forEach(elem => {
+                    elem.disabled = true
+                })
+                console.log(arr)
+                 }} style={buttonStyle}>Heap Sort</button>
         </nav>
     )
 }
