@@ -51,13 +51,13 @@ const Menu = ({arr, setArr}) => {
             }
             }>
             <Option text={'Enable Options'} onClick={() => {enableButtons()}} style={buttonStyle}/>
-            <button type="button" className="btn btn-success" onClick={() => {setArr(generateArray); console.log(arr)}} style={buttonStyle}>Generate Random Array</button>
-            <button type="button" className="btn btn-primary" onClick={() => {SelectionSort(arr); disableButtons();console.log(arr)}} style={buttonStyle}>Selection Sort</button>
-            <button type="button" className="btn btn-primary" onClick={() => {BubbleSort(arr); disableButtons(); console.log(arr)}} style={buttonStyle}>Bubble Sort</button>
-            <button type="button" className="btn btn-primary" onClick={() => {MergeSort(arr); disableButtons(); console.log(arr)}} style={buttonStyle}>Merge Sort</button>
-            <button type="button" className="btn btn-primary" onClick={() => {InsertionSort(arr); disableButtons(); console.log(arr)}} style={buttonStyle}>Insertion Sort</button>
-            <button type="button" className="btn btn-primary" onClick={() => {QuickSort(arr); disableButtons(); console.log(arr)}} style={buttonStyle}>Quick Sort</button>
-            <button type="button" className="btn btn-primary" onClick={() => {HeapSort(arr); disableButtons();console.log(arr)}} style={buttonStyle}>Heap Sort</button>
+            <button type="button" className="btn btn-success" onClick={() => {setArr(generateArray);}} style={buttonStyle}>Generate Random Array</button>
+            <Button text={'Selection Sort'} onClick={()=>{SelectionSort(arr); disableButtons()}} style={buttonStyle} />
+            <Button text={'Bubble Sort'} onClick={()=>{BubbleSort(arr); disableButtons()}} style={buttonStyle} />
+            <Button text={'Merge Sort'} onClick={()=>{MergeSort(arr); disableButtons()}} style={buttonStyle} />
+            <Button text={'Insertion Sort'} onClick={()=>{InsertionSort(arr); disableButtons()}} style={buttonStyle} />
+            <Button text={'Quick Sort'} onClick={()=>{QuickSort(arr); disableButtons()}} style={buttonStyle} />
+            <Button text={'Heap Sort'} onClick={()=>{HeapSort(arr); disableButtons()}} style={buttonStyle} />
         </nav>
     )
 }

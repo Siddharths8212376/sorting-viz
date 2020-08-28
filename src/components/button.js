@@ -1,4 +1,5 @@
 import React from 'react'
+import disableButtons from './menu'
 
 const Button = ({text, style, onClick}) => {
     return (
