@@ -1,8 +1,8 @@
 import React from 'react'
 import insertionSortAnimations from '../animations/insertionSortAnimations'
 
-const InsertionSort = (arr) => {
-    const animation_speed = 25
+const InsertionSort = ({ arr, speed }) => {
+    const animation_speed = speed
     const animations = insertionSortAnimations(arr)
     for (let i = 0; i < animations.length; i++) {
         const arrayBars = document.getElementsByClassName('array-bar')

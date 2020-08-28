@@ -1,8 +1,8 @@
 import React from 'react'
 import quickSortAnimations from '../animations/quickSortAnimations'
 
-const QuickSort = (arr) => {
-    const animation_speed = 30
+const QuickSort = ({ arr, speed }) => {
+    const animation_speed = speed
     const animations = quickSortAnimations(arr)
     // after sort
     for (let i = 0; i < animations.length; i++) {

@@ -1,8 +1,8 @@
 import React from 'react'
 import heapSortAnimations from '../animations/heapSortAnimations'
 
-const HeapSort = (arr) => {
-    const animation_speed = 5
+const HeapSort = ({ arr, speed }) => {
+    const animation_speed = speed
     const animations = heapSortAnimations(arr)
     // after sort
     for (let i = 0; i < animations.length; i++) {

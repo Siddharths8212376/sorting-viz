@@ -71,11 +71,11 @@ const Menu = ({arr, setArr, speed, setSpeed}) => {
             <Option text={'Enable Options'} onClick={() => {enableButtons()}} style={buttonStyle}/>
             <button type="button" className="btn btn-success" onClick={() => {setArr(generateArray);}} style={buttonStyle}>Generate Random Array</button>
             <Button text={'Selection Sort'} onClick={()=>{SelectionSort({arr, speed}); disableButtons()}} style={buttonStyle} />
-            <Button text={'Bubble Sort'} onClick={()=>{BubbleSort(arr); disableButtons()}} style={buttonStyle} />
-            <Button text={'Merge Sort'} onClick={()=>{MergeSort(arr); disableButtons()}} style={buttonStyle} />
-            <Button text={'Insertion Sort'} onClick={()=>{InsertionSort(arr); disableButtons()}} style={buttonStyle} />
-            <Button text={'Quick Sort'} onClick={()=>{QuickSort(arr); disableButtons()}} style={buttonStyle} />
-            <Button text={'Heap Sort'} onClick={()=>{HeapSort(arr); disableButtons()}} style={buttonStyle} />
+            <Button text={'Bubble Sort'} onClick={()=>{BubbleSort({arr, speed}); disableButtons()}} style={buttonStyle} />
+            <Button text={'Merge Sort'} onClick={()=>{MergeSort({arr, speed}); disableButtons()}} style={buttonStyle} />
+            <Button text={'Insertion Sort'} onClick={()=>{InsertionSort({arr, speed}); disableButtons()}} style={buttonStyle} />
+            <Button text={'Quick Sort'} onClick={()=>{QuickSort({arr, speed}); disableButtons()}} style={buttonStyle} />
+            <Button text={'Heap Sort'} onClick={()=>{HeapSort({arr, speed}); disableButtons()}} style={buttonStyle} />
         </nav>
     )
 }

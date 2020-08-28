@@ -1,8 +1,8 @@
 import React from 'react'
 import mergeSortAnimations from '../animations/mergeSortAnimations'
 const bars = []
-const MergeSort = (arr) => {
-    const animation_speed = 10
+const MergeSort = ({ arr, speed }) => {
+    const animation_speed = speed
     const animations = mergeSortAnimations(arr)
 
     for (let i = 0; i < animations.length; i++) {
