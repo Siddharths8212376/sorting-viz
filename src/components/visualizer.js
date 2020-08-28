@@ -8,12 +8,12 @@ const Visualizer = () => {
     const max = 50, min = 0
     for (let i = min; i < max; i++) init_array.push(Math.floor(Math.random() * (2*max - min + 1) + min))
     const [arr, setArr] = useState(init_array)
-    const [disabled, setDisabled] = useState(false)
+    const [animateSpeed, setSpeed] = useState(4)
     return (
         // visualizer basically has a menu option
         // the array 
         <div>
-            <Menu arr={arr} setArr={setArr}/>
+            <Menu arr={arr} setArr={setArr} speed={animateSpeed} setSpeed={setSpeed}/>
             <Array arr={arr} />
         </div>
 
