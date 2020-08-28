@@ -8,6 +8,7 @@ const Visualizer = () => {
     const max = 50, min = 0
     for (let i = min; i < max; i++) init_array.push(Math.floor(Math.random() * (2*max - min + 1) + min))
     const [arr, setArr] = useState(init_array)
+    const [disabled, setDisabled] = useState(false)
     return (
         // visualizer basically has a menu option
         // the array 

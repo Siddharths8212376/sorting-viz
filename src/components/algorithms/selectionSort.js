@@ -47,6 +47,7 @@ const SelectionSort = (arr) => {
         }
 
     }
+
 }
 
 export default SelectionSort
