@@ -9,11 +9,11 @@ import InsertionSort from './algorithms/insertionSort'
 import QuickSort from './algorithms/quickSort'
 import HeapSort from './algorithms/heapSort'
 
-function generateArray() {
+function generateArray(size) {
     const ar = []
 
-    for (let i = 0; i < 50; i++) 
-        ar.push(randRange(5, 100))
+    for (let i = 0; i < size; i++) 
+        ar.push(randRange(5, Math.max(size, 64)))
 
     return ar
 }
@@ -34,23 +34,37 @@ const randRange = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-const addSpeed = ({speed, setSpeed}) => {
+const addSpeed = ({speed, setSpeed, size, setSize, setArr}) => {
     const currentSpeed = speed
-    if (currentSpeed / 2 < 1) setSpeed(1)
+    if (currentSpeed / 2 < 1)setSpeed(1)
     else setSpeed(speed/2)
+
+
+    if (size * 2 >= 128) setSize(128)
+    else setSize(size*2)
+
+    setArr(generateArray(size))
+    console.log(size)
     return speed
 }
 
-const decreaseSpeed = ({speed, setSpeed}) => {
+const decreaseSpeed = ({speed, setSpeed, size, setSize, setArr}) => {
     const currentSpeed = speed
+    const curSize = size
     if (currentSpeed * 2 > 64) setSpeed(64)
     else setSpeed(speed*2)
+
+    if (size / 2 <= 32) setSize(32)
+    else setSize(size/2)
+    
+    setArr(generateArray(size))
+    console.log(size)
     return speed
 }
 
-const Menu = ({arr, setArr, speed, setSpeed}) => {
+const Menu = ({arr, setArr, speed, setSpeed, size, setSize}) => {
 
-    const array = generateArray()
+    const array = generateArray(size)
     const buttonStyle = {
         marginLeft:"10px", marginRight:"10px", marginTop:"10px", marginBottom:"10px"
     }
@@ -67,9 +81,9 @@ const Menu = ({arr, setArr, speed, setSpeed}) => {
             width:"100%",
             }
             }>
-            <span class="font-weight-light" style={{marginLeft:"5px", marginRight:"15px"}}>Speed: {1024/speed} <Button text={'+'} onClick={()=> {addSpeed({speed, setSpeed})}} style={adderStyle}/> <Button text={'-'} onClick={()=> {decreaseSpeed({speed, setSpeed})}} style={adderStyle}/></span>
+            <span class="font-weight-light" style={{marginLeft:"5px", marginRight:"15px"}}>Speed: {1024/speed} <Button text={'+'} onClick={()=> {addSpeed({speed, setSpeed, size, setSize, setArr})}} style={adderStyle}/> <Button text={'-'} onClick={()=> {decreaseSpeed({speed, setSpeed, size, setSize, setArr})}} style={adderStyle}/></span>
             <Option text={'Enable Options'} onClick={() => {enableButtons()}} style={buttonStyle}/>
-            <button type="button" className="btn btn-success" onClick={() => {setArr(generateArray);}} style={buttonStyle}>Generate Random Array</button>
+            <button type="button" className="btn btn-success" onClick={() => {setArr(generateArray(size));}} style={buttonStyle}>Generate Random Array</button>
             <Button text={'Selection Sort'} onClick={()=>{SelectionSort({arr, speed}); disableButtons()}} style={buttonStyle} />
             <Button text={'Bubble Sort'} onClick={()=>{BubbleSort({arr, speed}); disableButtons()}} style={buttonStyle} />
             <Button text={'Merge Sort'} onClick={()=>{MergeSort({arr, speed}); disableButtons()}} style={buttonStyle} />
