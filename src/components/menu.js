@@ -40,7 +40,7 @@ const addSpeed = ({speed, setSpeed, size, setSize, setArr}) => {
     else setSpeed(speed/2)
 
 
-    if (size * 2 >= 128) setSize(128)
+    if (size * 2 >= 128 || size == 64) setSize(128)
     else setSize(size*2)
 
     setArr(generateArray(size))
@@ -54,7 +54,7 @@ const decreaseSpeed = ({speed, setSpeed, size, setSize, setArr}) => {
     if (currentSpeed * 2 > 64) setSpeed(64)
     else setSpeed(speed*2)
 
-    if (size / 2 <= 32) setSize(32)
+    if (size / 2 <= 32 || size == 64) setSize(32)
     else setSize(size/2)
     
     setArr(generateArray(size))
